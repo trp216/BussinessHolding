@@ -2,7 +2,7 @@ package model;
 
 public class Company {
 	
-	protected String name;
+	private String name;
 
 	public Company(String n) {
 		name = n;
@@ -16,6 +16,4 @@ public class Company {
 		this.name = name;
 	}
 	
-	
-
 }

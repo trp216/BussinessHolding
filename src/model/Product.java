@@ -2,9 +2,9 @@ package model;
 
 public class Product {
 
-	protected String name;
-	protected int code;
-	protected double water;
+	private String name;
+	private int code;
+	private double water;
 	private int inventary;
 	
 	public Product(String n, int c, double w, int i) {
