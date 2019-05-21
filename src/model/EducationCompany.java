@@ -1,6 +1,6 @@
 package model;
 
-public class EducationCompany extends ServiceCompany{
+public class EducationCompany extends ServiceCompany implements Tax{
 
 	private int registroMEN;
 	private int accreditationYears;
@@ -24,6 +24,14 @@ public class EducationCompany extends ServiceCompany{
 		totalActiveStudents = t;
 		activeStudents12 = as;
 		educationSector = e;
+	}
+	
+	public double tax() {
+		double p = activeStudents12/totalActiveStudents;
+		double t = 20 - p;
+		if(p<0)
+			t = 0;
+		return t;
 	}
 
 	public int getRegistroMEN() {

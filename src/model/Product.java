@@ -14,4 +14,38 @@ public class Product {
 		inventary = i;
 	}
 
+	public String getNameP() {
+		return name;
+	}
+
+	public void setNameP(String name) {
+		this.name = name;
+	}
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	public double getWater() {
+		return water;
+	}
+
+	public void setWater(double water) {
+		this.water = water;
+	}
+
+	public int getInventary() {
+		return inventary;
+	}
+
+	public void setInventary(int inventary) {
+		this.inventary = inventary;
+	}
+
+	
+	
 }

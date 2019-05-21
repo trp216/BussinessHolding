@@ -1,6 +1,6 @@
 package model;
 
-public class Company {
+public abstract class Company {
 	
 	private String name;
 

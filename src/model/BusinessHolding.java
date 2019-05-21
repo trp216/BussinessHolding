@@ -17,6 +17,8 @@ public class BusinessHolding {
 		return msg;
 	}
 	
+	public String addCompanyBH(Object c) {}
+	
 	public ArrayList getArrayCompany() {
 		return arrayCompany;
 	}

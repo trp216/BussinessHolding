@@ -19,6 +19,7 @@ public class Medicine extends Product{
 		expiration = e;
 		modality = m;
 	}
+	
 
 	public String getSanReg() {
 		return sanReg;
