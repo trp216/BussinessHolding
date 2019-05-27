@@ -28,6 +28,24 @@ public class BusinessHolding {
 			arrayCompany.add((MedicineCompany) c);
 	}
 	
+	public Company searchCompanyBH(String n) {
+		Company obj = null;
+		for(int i=0;i<arrayCompany.size();i++) {
+			if(arrayCompany.get(i).getNameC().equals(n))
+				obj = arrayCompany.get(i);
+		}
+		return obj;
+	}
+	
+	public TechnologyCompany searchTCompanyBH(String n) {
+		TechnologyCompany obj = null;
+		for(int i=0;i<arrayCompany.size();i++) {
+			if(arrayCompany.get(i) instanceof TechnologyCompany && arrayCompany.get(i).getNameC().equals(n))
+				obj = (TechnologyCompany) arrayCompany.get(i);
+		}
+		return obj;
+	}
+	
 	public ArrayList getArrayCompany() {
 		return arrayCompany;
 	}

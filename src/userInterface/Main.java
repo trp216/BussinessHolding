@@ -57,15 +57,15 @@ public class Main {
 		}
 	}
 	
-	public String addServicesTechnologyCompany(){
+	public String addServicesTechnologyCompany(String j){ //j es el nombre de la company
 		Scanner m = new Scanner(System.in);
 		System.out.println("Enter the amount of services of the technology company");
 		int n = m.nextInt();
 		System.out.println("Enter the services of the company");
-		System.out.println(bh.TechnologyCompany.showServicesList());
-		for(int i=0; i<=n;i++) {
-			
-		}
+		TechnologyCompany x = bh.searchTCompanyBH(j);
+		String msg = x.showServicesList();
+		return msg;
 	}
+
 
 }
