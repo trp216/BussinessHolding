@@ -3,9 +3,11 @@ import model.*;
 import java.util.Scanner;
 
 public class Main {
+	
+	private BusinessHolding bh;
 
 	public Main() {
-		// TODO Auto-generated constructor stub
+		bh = new BusinessHolding("Test BussinessHolding");
 	}
 
 	public static void main(String[] args) {
@@ -40,10 +42,28 @@ public class Main {
 			int as12 = c.nextInt();
 			System.out.println("Enter the education sector of the institution (High school or University):");
 			String es = c.next();
-			EducationCompany e = new EducationCompany(n, rM, ay, np11, npp, r, tas, as12, es);
-			obj = e;
+			obj = new EducationCompany(n, rM, ay, np11, npp, r, tas, as12, es);
 		}
 		else if(x == 'T') {
+			obj = new TechnologyCompany(n);
+		}
+		else if(x == 'M') {
+			obj = new MedicineCompany(n);
+		}
+		else if(x == 'F') {
+			System.out.println("Enter the sanitary register of the company");
+			String sr = c.next();
+			obj = new FoodCompany(n,sr);
+		}
+	}
+	
+	public String addServicesTechnologyCompany(){
+		Scanner m = new Scanner(System.in);
+		System.out.println("Enter the amount of services of the technology company");
+		int n = m.nextInt();
+		System.out.println("Enter the services of the company");
+		System.out.println(bh.TechnologyCompany.showServicesList());
+		for(int i=0; i<=n;i++) {
 			
 		}
 	}

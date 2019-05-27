@@ -17,7 +17,16 @@ public class BusinessHolding {
 		return msg;
 	}
 	
-	public String addCompanyBH(Object c) {}
+	public void addCompanyBH(Object c) {
+		if(c instanceof EducationCompany)
+			arrayCompany.add((TechnologyCompany) c);
+		else if(c instanceof Company)
+			arrayCompany.add((TechnologyCompany) c);
+		else if(c instanceof FoodCompany)
+			arrayCompany.add((FoodCompany) c);
+		else if(c instanceof MedicineCompany)
+			arrayCompany.add((MedicineCompany) c);
+	}
 	
 	public ArrayList getArrayCompany() {
 		return arrayCompany;

@@ -9,4 +9,13 @@ public class FoodCompany extends FabricationCompany{
 		sanReg = sr;
 	}
 
+	public String getSanReg() {
+		return sanReg;
+	}
+
+	public void setSanReg(String sanReg) {
+		this.sanReg = sanReg;
+	}
+
+	
 }
