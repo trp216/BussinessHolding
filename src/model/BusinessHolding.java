@@ -6,6 +6,7 @@ public class BusinessHolding {
 	private String name;
 	
 	private ArrayList<Company> arrayCompany;
+	private Question testQ;
 
 	public BusinessHolding(String n) {
 		name = n;
@@ -15,6 +16,18 @@ public class BusinessHolding {
 	public String addCompany() {
 		String msg = "";
 		return msg;
+	}
+	
+	public Question getTestQ() {
+		return testQ;
+	}
+	
+	public void registerPollBH(String n, int a1, int a2, int a3) {
+		if(searchCompanyBH(n) instanceof ServiceCompany) {
+			ServiceCompany s = (ServiceCompany)searchCompanyBH(n);
+			Poll p = new Poll(a1,a2,a3);
+			s.addPoll(p);
+		}
 	}
 	
 	public void addCompanyBH(Object c) {

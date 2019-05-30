@@ -15,7 +15,7 @@ public class Main {
 
 	}
 
-	public String addCompanyM() {
+	public void addCompanyM() {
 		Scanner c = new Scanner(System.in);
 		
 		System.out.println("Enter the name of the company");
@@ -55,6 +55,24 @@ public class Main {
 			String sr = c.next();
 			obj = new FoodCompany(n,sr);
 		}
+		
+		if(bh.searchCompanyBH(n)==null)
+			bh.addCompanyBH(obj);
+	}
+	
+	public void registerPoll() {
+		Scanner p = new Scanner(System.in);
+		
+		System.out.println("Enter the name of the company:");
+		String n = p.next();
+		System.out.println(bh.getTestQ().getQ1());
+		int a1 = p.nextInt();
+		System.out.println(bh.getTestQ().getQ2());
+		int a2 = p.nextInt();
+		System.out.println(bh.getTestQ().getQ3());
+		int a3 = p.nextInt();
+			
+		bh.registerPollBH(n, a1, a2, a3);
 	}
 	
 	public String addServicesTechnologyCompany(String j){ //j es el nombre de la company
