@@ -7,6 +7,7 @@ public class ServiceCompany extends Company{
 
 	public ServiceCompany(String n) {
 		super(n);
+		arrayPoll = new Poll[50];
 	}
 
 	public Poll[] getArrayPoll() {
