@@ -14,8 +14,8 @@ public class EducationCompany extends ServiceCompany implements Tax{
 	public static String HS = "High School"; 
 	public static String UN = "University";
 	
-	public EducationCompany(String n, int rm, int ay, int ne, int np, String re, int t, int as, String e) {
-		super(n);
+	public EducationCompany(String n, int f,int rm, int ay, int ne, int np, String re, int t, int as, String e) {
+		super(n,f);
 		registroMEN = rm;
 		accreditationYears = ay;
 		nationalPosition11 = ne;

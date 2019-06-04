@@ -4,8 +4,8 @@ public class FoodCompany extends FabricationCompany{
 	
 	private String sanReg;
 
-	public FoodCompany(String n, String sr) {
-		super(n);
+	public FoodCompany(String n, int f,String sr) {
+		super(n,f);
 		sanReg = sr;
 	}
 

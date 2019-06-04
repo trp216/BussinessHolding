@@ -1,12 +1,12 @@
 package model;
 import java.util.ArrayList;
 
-public class MedicineCompany extends FabricationCompany implements WaterAndTrees{
+public class MedicineCompany extends FabricationCompany implements SomethingAndTrees{
 	
 	private ArrayList<Medicine> arrayMedicine;
 
-	public MedicineCompany(String n) {
-		super(n);
+	public MedicineCompany(String n, int f) {
+		super(n,f);
 		arrayMedicine = new ArrayList<Medicine>();
 	}
 	
@@ -18,7 +18,7 @@ public class MedicineCompany extends FabricationCompany implements WaterAndTrees
 		return x;
 	}
 	
-	public int waterXtrees() {
+	public int somethingXtrees() {
 		int t = 0;
 		if(getTotalWater()>=1 && getTotalWater()<=140)
 			t = 6;

@@ -5,10 +5,11 @@ public class ServiceCompany extends Company{
 	private Poll[] arrayPoll;
 	
 
-	public ServiceCompany(String n) {
-		super(n);
+	public ServiceCompany(String n, int f) {
+		super(n,f);
 		arrayPoll = new Poll[50];
 	}
+	
 
 	public Poll[] getArrayPoll() {
 		return arrayPoll;

@@ -21,6 +21,9 @@ public class Main {
 		System.out.println("Enter the name of the company");
 		String n = c.next();
 		
+		System.out.println("Enter the amount of floors of the company");
+		int f = c.nextInt();
+		
 		System.out.println("What kind of company is it(E for education, F for food, M for medicine, T for technology)?");
 		char x = c.next().charAt(0);
 		Object obj = null;
@@ -42,18 +45,20 @@ public class Main {
 			int as12 = c.nextInt();
 			System.out.println("Enter the education sector of the institution (High school or University):");
 			String es = c.next();
-			obj = new EducationCompany(n, rM, ay, np11, npp, r, tas, as12, es);
+			obj = new EducationCompany(n,f, rM, ay, np11, npp, r, tas, as12, es);
 		}
 		else if(x == 'T') {
-			obj = new TechnologyCompany(n);
+			System.out.println("How much energy does it consume?");
+			int e = c.nextInt();
+			obj = new TechnologyCompany(n,f,e);
 		}
 		else if(x == 'M') {
-			obj = new MedicineCompany(n);
+			obj = new MedicineCompany(n,f);
 		}
 		else if(x == 'F') {
 			System.out.println("Enter the sanitary register of the company");
 			String sr = c.next();
-			obj = new FoodCompany(n,sr);
+			obj = new FoodCompany(n,f, sr);
 		}
 		
 		if(bh.searchCompanyBH(n)==null)

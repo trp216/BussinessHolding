@@ -7,15 +7,10 @@ public class BusinessHolding {
 	
 	private ArrayList<Company> arrayCompany;
 	private Question testQ;
-
+	
 	public BusinessHolding(String n) {
 		name = n;
 		arrayCompany = new ArrayList<Company>();
-	}
-	
-	public String addCompany() {
-		String msg = "";
-		return msg;
 	}
 	
 	public Question getTestQ() {
@@ -70,4 +65,5 @@ public class BusinessHolding {
 	public void setNameBH(String name) {
 		this.name = name;
 	}
+	
 }
