@@ -9,6 +9,7 @@ public class Company {
 	public Company(String n, int floor) {
 		name = n;
 		matrix = new Cubicle[floor][20];
+		fillMatrix();
 	}
 
 	public String getNameC() {
@@ -21,6 +22,16 @@ public class Company {
 	
 	public Cubicle[][] getMatrix(){
 		return matrix;
+	}
+	
+	public void fillMatrix() {
+		int x = 1;
+		for(int f = (matrix.length-1); f>=0;f--) {
+			for(int j = 0;j<matrix[0].length;j++) {
+				matrix[f][j]= new Cubicle(x);
+			x++;
+		}
+		}
 	}
 	
 	public int searchL(String n) {
