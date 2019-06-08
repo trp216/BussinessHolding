@@ -47,4 +47,18 @@ public class Company {
 		}
 		return x;
 	}
+	
+	public int searchO(String n) {
+		int z = 0;
+		for(int c = 0; c<matrix.length;c++) {
+			if(matrix[0][c]!=null)
+				z = matrix[0][c].searchEmployeeExtension(n);
+		}
+		
+		for(int c = 0; c<matrix.length;c++) {
+			if(matrix[0][c]!=null)
+				z = matrix[matrix.length-1][c].searchEmployeeExtension(n);
+		}
+		return z;
+	}
 }

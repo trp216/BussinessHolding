@@ -54,6 +54,17 @@ public class BusinessHolding {
 		return obj;
 	}
 	
+	public int searchEmployeeBH(String c, String n, char b) {
+		int y = 0;
+		if(searchCompanyBH(c)!=null) {
+			if(b == 'L')	
+				y = searchCompanyBH(c).searchL(n);
+			if(b == 'O')	
+				y = searchCompanyBH(c).searchO(n);
+		}
+		return y;
+	}
+	
 	public ArrayList getArrayCompany() {
 		return arrayCompany;
 	}

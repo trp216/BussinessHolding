@@ -11,10 +11,47 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Main objMain = new Main();
+		System.out.println("Welcome to the Bussiness Holding menu");
+		objMain.menu();
 	}
-
+	
+	public void menu() {
+		Scanner x = new Scanner(System.in);
+		boolean end = true;
+		String msg = "";
+		while(end) {
+			System.out.println("What do you want to do?\n");
+			System.out.println("1- Add a company\n");
+			System.out.println("2- Register a new poll\n");
+			System.out.println("3- Search for an employee extension");
+			System.out.println("4- Add an employee");
+			System.out.println("5- Exit");
+			int entry = x.nextInt();
+			switch(entry){
+				case 1:
+					addCompanyM();
+					break;
+				case 2:
+					registerPoll();
+					break;
+				case 3:
+					msg = Integer.toString(searchEmployee());
+					System.out.println(msg);
+					break;
+				case 5:
+					msg = "gweld chi yn fuan"; 
+					System.out.println(msg);
+					end = false;
+					break;
+				default:
+					msg = "Error: this number can't be evaluated";
+					System.out.println(msg);
+			}
+		}
+		
+	}
+	
 	public void addCompanyM() {
 		Scanner c = new Scanner(System.in);
 		
@@ -24,7 +61,7 @@ public class Main {
 		System.out.println("Enter the amount of floors of the company");
 		int f = c.nextInt();
 		
-		System.out.println("What kind of company is it(E for education, F for food, M for medicine, T for technology)?");
+		System.out.println("What kind of company is it(E for education, F for food, M for medicine, T for technology, P for Public Services)?");
 		char x = c.next().charAt(0);
 		Object obj = null;
 		
@@ -60,6 +97,13 @@ public class Main {
 			String sr = c.next();
 			obj = new FoodCompany(n,f, sr);
 		}
+		else if(x == 'P') {
+			System.out.println("Enter the total subscribers of the company:");
+			int t = c.nextInt();
+			System.out.println("Enter the amount of subscribers from stratum 1 and 2");
+			int s = c.nextInt();
+			obj = new PublicServicesCompany(n, f, t ,s);
+		}
 		
 		if(bh.searchCompanyBH(n)==null)
 			bh.addCompanyBH(obj);
@@ -79,6 +123,22 @@ public class Main {
 			
 		bh.registerPollBH(n, a1, a2, a3);
 	}
+	
+	public int searchEmployee() {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("Enter the name of the company");
+		String c = s.next();
+		
+		System.out.println("Enter the name of the employee that you want to search:");
+		String n = s.next();
+		
+		System.out.println("Enter the way of searching (L, O)");
+		char b = s.next().charAt(0);
+		
+		return bh.searchEmployeeBH(c, n, b);
+	}
+
 	
 	public String addServicesTechnologyCompany(String j){ //j es el nombre de la company
 		Scanner m = new Scanner(System.in);
