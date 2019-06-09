@@ -1,16 +1,24 @@
 package model;
 
-public class Employee extends Cubicle{
+public class Employee{
 	
 	private String name;
 	private String position;
 	private String email;
+	private int telephoneExtension;
 
-	public Employee(int t, String n, String p, String e) {
-		super(t);
+	public Employee(String n, String p, String e) {
 		name = n;
 		position = p;
 		email = e;
+	}
+
+	public int getTelephoneExtension() {
+		return telephoneExtension;
+	}
+
+	public void setTelephoneExtension(int telephoneExtension) {
+		this.telephoneExtension = telephoneExtension;
 	}
 
 	public String getNameE() {

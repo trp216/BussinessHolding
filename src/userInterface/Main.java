@@ -138,7 +138,20 @@ public class Main {
 		
 		return bh.searchEmployeeBH(c, n, b);
 	}
-
+	
+	public void addEmployeeM() {
+		Scanner x = new Scanner(System.in);
+		System.out.println("Enter the name of the company");
+		String c = x.next();
+		System.out.println("Enter the name of the employee");
+		String n = x.next();
+		System.out.println("Enter the position of the employee");
+		String p = x.next();
+		System.out.println("Enter the e-mail of the employee");
+		String m = x.next();
+		bh.addEmployeeBH(n, p, m, c);;
+		
+	}
 	
 	public String addServicesTechnologyCompany(String j){ //j es el nombre de la company
 		Scanner m = new Scanner(System.in);

@@ -36,5 +36,9 @@ public class TechnologyCompany extends ServiceCompany implements SomethingAndTre
 		String msg = CONSULTORY + ", " + TRAINING + ", " + SOFTWARE_M + ", " + INFRASTRUCTURE + ", " + SOFTWARE_S + ", " + PLATFORM;
 		return msg;
 	}
+	
+	public String[] getArrayServices() {
+		return services;
+	}
 
 }

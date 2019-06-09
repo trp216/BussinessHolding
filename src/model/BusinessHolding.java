@@ -65,6 +65,12 @@ public class BusinessHolding {
 		return y;
 	}
 	
+	public void addEmployeeBH(String n, String p, String m, String c) {
+		Employee e = new Employee(n,p,m);
+		if(searchCompanyBH(c)!=null)
+			searchCompanyBH(c).addEmployee(e);
+	}
+	
 	public ArrayList getArrayCompany() {
 		return arrayCompany;
 	}

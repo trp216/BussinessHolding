@@ -7,6 +7,8 @@ public class Cubicle {
 	
 	public Cubicle(int t) {
 		telephoneExtension = t;
+		if(employeeX!=null)
+			employeeX.setTelephoneExtension(telephoneExtension);
 	}
 	
 	public Employee getEmployeeX() {
@@ -28,7 +30,7 @@ public class Cubicle {
 	public int searchEmployeeExtension(String n) {
 		int w = 0;
 		if(employeeX != null) {
-			w = employeeX.getTelephoneExtension();
+			w = telephoneExtension;
 		}
 		return w;
 	}

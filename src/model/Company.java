@@ -61,4 +61,17 @@ public class Company {
 		}
 		return z;
 	}
+	
+	public void addEmployee(Employee e) {
+		boolean b = false;
+		for(int f = 0; f<matrix.length-1 && b==false;f--) {
+			for(int c = 0; c<matrix[0].length && b==false;c++) {
+				if(matrix[f][c]==null) {
+					matrix[f][c].setEmployeeX(e);
+					e.setTelephoneExtension(matrix[f][c].getTelephoneExtension());
+					b = true;
+				}
+			}
+		}
+	}
 }
