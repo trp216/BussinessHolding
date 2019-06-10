@@ -170,7 +170,7 @@ public class Main {
 		System.out.println("Enter the name of the employee that you want to search:");
 		String n = s.next();
 		
-		System.out.println("Enter the way of searching (L, O)");
+		System.out.println("Enter the way of searching (L, O, Z)");
 		char b = s.next().charAt(0);
 		
 		return bh.searchEmployeeBH(c, n, b);

@@ -100,7 +100,7 @@ public class Company {
 	 */
 	public int searchO(String n) {
 		int z = 0;
-		for(int c = 0; c<matrix.length;c++) {
+		for(int c = 0; c<matrix[0].length;c++) {
 			if(matrix[0][c]!=null)
 				z = matrix[0][c].searchEmployeeExtension(n);
 		}
@@ -115,8 +115,36 @@ public class Company {
 			z = matrix[f][matrix.length-1].searchEmployeeExtension(n);
 		}
 		
-		for(int c = 0; c<matrix.length;c++) {
+		for(int c = 0; c<matrix[0].length;c++) {
 			if(matrix[0][c]!=null)
+				z = matrix[matrix.length-1][c].searchEmployeeExtension(n);
+		}
+		return z;
+	}
+	
+	/**
+	 * searchO
+	 * Method that searches an employee extension in an Z way
+	 * <b>pre: </b> matrix must've been created an initialized
+	 * @param n name of the employee
+	 * @return extension of the employee
+	 */
+	public int searchZ(String n) {
+		int z = 0;
+		for(int c = 0; c<matrix[0].length;c++) {
+			if(matrix[0][c]!=null)
+				z = matrix[0][c].searchEmployeeExtension(n);
+		}
+		
+		for(int f = 1; f<matrix.length-1;f++) {
+		for(int i = matrix[0].length-2; i>0;i--) {
+			if(f+i==matrix[0].length-1 && matrix[f][i]!=null) {
+				z = matrix[f][i].searchEmployeeExtension(n);
+		}}}
+		
+		
+		for(int c = 0; c<matrix[0].length;c++) {
+			if(matrix[matrix.length-1][c]!=null)
 				z = matrix[matrix.length-1][c].searchEmployeeExtension(n);
 		}
 		return z;

@@ -118,6 +118,8 @@ public class BusinessHolding {
 				y = searchCompanyBH(c).searchL(n);
 			if(b == 'O')	
 				y = searchCompanyBH(c).searchO(n);
+			if(b =='Z')
+				y = searchCompanyBH(c).searchZ(n);
 		}
 		return y;
 	}
