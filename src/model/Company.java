@@ -105,6 +105,16 @@ public class Company {
 				z = matrix[0][c].searchEmployeeExtension(n);
 		}
 		
+		for(int f = 1; f<matrix.length;f++ ) {
+			if(matrix[f][0]!=null)
+				z = matrix[f][0].searchEmployeeExtension(n);
+		}
+		
+		for(int f = 1; f<matrix.length;f++) {
+			if(matrix[f][matrix.length-1]!=null)
+			z = matrix[f][matrix.length-1].searchEmployeeExtension(n);
+		}
+		
 		for(int c = 0; c<matrix.length;c++) {
 			if(matrix[0][c]!=null)
 				z = matrix[matrix.length-1][c].searchEmployeeExtension(n);
