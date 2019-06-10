@@ -2,20 +2,41 @@ package userInterface;
 import model.*;
 import java.util.Scanner;
 
+
+/**
+ * class Main
+ * @author Alejandra Diaz
+ *
+ */
 public class Main {
 	
 	private BusinessHolding bh;
 
+	/**
+	 * Main
+	 * Main constructor
+	 * Creates a new object Main
+	 * <b>post</b> a new main is created. A bussiness holding is created.
+	 */
 	public Main() {
 		bh = new BusinessHolding("Test BussinessHolding");
 	}
 
+	/**
+	 * main
+	 * this method creates a main and displays the menu
+	 * @param args args
+	 */
 	public static void main(String[] args) {
 		Main objMain = new Main();
 		System.out.println("Welcome to the Bussiness Holding menu");
 		objMain.menu();
 	}
 	
+	/**
+	 * menu
+	 * This method is a navigation menu
+	 */
 	public void menu() {
 		Scanner x = new Scanner(System.in);
 		boolean end = true;
@@ -39,6 +60,9 @@ public class Main {
 					msg = Integer.toString(searchEmployee());
 					System.out.println(msg);
 					break;
+				case 4:
+					addEmployeeM();
+					break;
 				case 5:
 					msg = "gweld chi yn fuan"; 
 					System.out.println(msg);
@@ -52,6 +76,10 @@ public class Main {
 		
 	}
 	
+	/**
+	 * addCompanyM
+	 * This method creates a new company
+	 */
 	public void addCompanyM() {
 		Scanner c = new Scanner(System.in);
 		
@@ -109,6 +137,10 @@ public class Main {
 			bh.addCompanyBH(obj);
 	}
 	
+	/**
+	 * registerPoll
+	 * this method creates a new poll
+	 */
 	public void registerPoll() {
 		Scanner p = new Scanner(System.in);
 		
@@ -124,6 +156,11 @@ public class Main {
 		bh.registerPollBH(n, a1, a2, a3);
 	}
 	
+	/**
+	 * searchEmployee
+	 * this method search an employee's telephone extension
+	 * @return telephone extension
+	 */
 	public int searchEmployee() {
 		Scanner s = new Scanner(System.in);
 		
@@ -139,6 +176,10 @@ public class Main {
 		return bh.searchEmployeeBH(c, n, b);
 	}
 	
+	/**
+	 * addEmployeeM
+	 * This method adds a new employee
+	 */
 	public void addEmployeeM() {
 		Scanner x = new Scanner(System.in);
 		System.out.println("Enter the name of the company");
@@ -151,16 +192,6 @@ public class Main {
 		String m = x.next();
 		bh.addEmployeeBH(n, p, m, c);;
 		
-	}
-	
-	public String addServicesTechnologyCompany(String j){ //j es el nombre de la company
-		Scanner m = new Scanner(System.in);
-		System.out.println("Enter the amount of services of the technology company");
-		int n = m.nextInt();
-		System.out.println("Enter the services of the company");
-		TechnologyCompany x = bh.searchTCompanyBH(j);
-		String msg = x.showServicesList();
-		return msg;
 	}
 
 
